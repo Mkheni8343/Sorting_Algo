@@ -17,25 +17,25 @@ def plot_sort(num,gape):
 		lst.append(random.randint(1,num*10))
 	for i in range(1,num,gape):
 		
-		st = time.clock()
+		st = time.process_time()
 		bub_l = bubbleSort(lst[:i])
-		en = time.clock()
+		en = time.process_time()
 		bub.append((en-st)*1000)
 
-		st = time.clock()
+		st = time.process_time()
 		bub_l = mergeSort(lst[:i])
-		en = time.clock()
+		en = time.process_time()
 		mg.append((en-st)*1000)
 
 		new_l = lst[:i].copy()
-		st = time.clock()
+		st = time.process_time()
 		new_l.sort()
-		en = time.clock()
+		en = time.process_time()
 		tim.append((en-st)*1000)
 
-		st = time.clock()
+		st = time.process_time()
 		insort = insertSort(lst[:i])
-		en = time.clock()
+		en = time.process_time()
 		ins1.append((en-st)*1000)
 
 
@@ -53,4 +53,4 @@ def plot_sort(num,gape):
 	plt.show()
 	plt.cla()
 
-plot_sort(100,10)
+plot_sort(5000,100)
